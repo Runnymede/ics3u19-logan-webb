@@ -2,6 +2,11 @@ package Webb.unit3;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * @author 334750643
+ *
+ */
 public class NameReverse {
 
 	public static void main(String[] args) {
