@@ -1,5 +1,10 @@
 package Webb.unit3;
-
+/*
+ * HappySong
+ * this a program will roll 2 dice 10000 times and count the total times each number is rolled
+ * nov 24 2019
+ * @author Logan Webb
+ */
 public class HappySong {
 
 	public static void main(String[] args) {

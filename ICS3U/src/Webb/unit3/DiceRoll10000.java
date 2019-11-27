@@ -1,5 +1,10 @@
 package Webb.unit3;
-
+/*
+ * diceroll10000
+ * this a program will roll 2 dice 10000 times and count the total times each number is rolled
+ * nov 24 2019
+ * @author Logan Webb
+ */
 public class DiceRoll10000 {
 
 	public static void main(String[] args) {

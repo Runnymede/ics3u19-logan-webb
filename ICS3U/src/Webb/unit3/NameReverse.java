@@ -2,10 +2,11 @@ package Webb.unit3;
 
 import java.util.Scanner;
 
-/**
- * 
- * @author 334750643
- *
+/*
+ * namereverse
+ * this a program will ask the user for many names and will print the names forwards and reversed
+ * nov 24 2019
+ * @author Logan Webb
  */
 public class NameReverse {
 
