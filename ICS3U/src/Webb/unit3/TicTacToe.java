@@ -32,6 +32,8 @@ public class TicTacToe {
 			System.out.println("where would player one like to go? type in the number");
 			String player1= sc.nextLine();
 //inputing player 1's move into the board
+			if(player1.equals("O"))
+				
 			switch(player1)
 			{
 			case "1":tttboard[0][0]=("X");

@@ -14,7 +14,7 @@ public class Questions20 {
 		Scanner sc=new Scanner(System.in);	
 		
 		String response ;
-		// setting all of the possiable options to guess
+		// setting all of the possible options to guess
 		String[] guesses = {"strawberry", "rasberry", "apple","orange","banana","pineapple","watermelon"
 				,"blackberry","bluberry", "peach", "apricot","kiwi","plum","grape","dragonfruit","cherry"
 				,"pear","mango","cranbery","clemintine"};
@@ -27,7 +27,7 @@ public class Questions20 {
 			int guessSpot = (int)((Math.random()*20)+1);
 			System.out.println("is it a "+guesses[guessSpot]);
 			response= sc.nextLine();
-			//if statment to see if the computer guesses right
+			//if statement to see if the computer guesses right
 			if(response.equals("yes"))
 			{
 				System.out.println("i win!");
