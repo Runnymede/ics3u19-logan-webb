@@ -8,9 +8,13 @@ package Webb.unit3;
 public class DiceRoll10000 {
 
 	public static void main(String[] args) {
+	
+		// making all the possable options to roll
 		int[] rollnumber= {2,3,4,5,6,7,8,9,10,11,12};
+		// making the sum for all the rolls
 		int[] rollsum=    {0,0,0,0,0,0,0,0,0,0,0};
 		
+		// loop to role the dice 10000 times
 		for(int rollnum = 0; rollnum<=10000; rollnum++)
 		{
 		
@@ -18,12 +22,12 @@ public class DiceRoll10000 {
 		int dice2;
 		int sum;
 
+		// roling the dice
 		dice1=(int)(Math.random()*6)+1;
 		dice2=(int)(Math.random()*6)+1;
 		sum= dice1+dice2;
 		
-		
-	
+// counting up the sum of the rolls
 		switch(sum)
 		{
 		case 2: rollsum[0]++;
@@ -53,7 +57,7 @@ public class DiceRoll10000 {
 		}
 		
 		}
-		
+		// printing the totals
 		System.out.format("%-10s %20s %20s", "total", "number of rolls","\n");
 		for(int i = 0;i<11; i++)
 		{
