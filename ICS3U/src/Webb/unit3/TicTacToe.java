@@ -11,11 +11,13 @@ public class TicTacToe {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);	
+		
 		// making the board		
 		String[][] tttboard= {{"1", "2", "3"}, {"4", "5", "6"}, {"7", "8", "9"}};
 
 		for (int count = 0; count<=9; count++)
 		{
+			
 			//printing out the bored
 			System.out.print(tttboard[0][0]+"  ");//1
 			System.out.print(tttboard[0][1]+"  ");//2
@@ -28,14 +30,17 @@ public class TicTacToe {
 			System.out.print(tttboard[2][0]+"  ");//7
 			System.out.print(tttboard[2][1]+"  ");//8
 			System.out.print(tttboard[2][2]+"  ");//9
+			
 			// asking for player 1's move
 			System.out.println("where would player one like to go? type in the number");
 			String player1= sc.nextLine();
+			
 			// checking for cheaters
 			if(player1.equals("O"))
 			{
 				System.out.println("we dont allow cheaters here, your turn has been skipped");
 			}
+			
 			//inputing player 1's move into the board	
 			switch(player1)
 			{
@@ -76,6 +81,7 @@ public class TicTacToe {
 				System.out.println("player 2 wins!!");
 				break;
 			}
+			
 			//Looking for a winner on all horizontal spots
 			else if(tttboard[0][0].equals("X")&&tttboard[0][1].equals("X")&&tttboard[0][2].equals("X")||
 					tttboard[1][0].equals("X")&&tttboard[1][1].equals("X")&&tttboard[1][2].equals("X")||
@@ -91,6 +97,7 @@ public class TicTacToe {
 				System.out.println("player 2 wins!!");
 				break;
 			}
+			
 			//Looking for a winner on all diagonal spots
 			else if(tttboard[0][0].equals("X")&&tttboard[1][1].equals("X")&&tttboard[2][2].equals("X")||
 					tttboard[0][2].equals("X")&&tttboard[1][1].equals("X")&&tttboard[2][0].equals("X"))
@@ -104,6 +111,7 @@ public class TicTacToe {
 				System.out.println("player 2 wins!!");
 				break;
 			}
+			
 			// printing out the board with player 1's move for player 2 to make their move
 			System.out.print(tttboard[0][0]+"  ");//1
 			System.out.print(tttboard[0][1]+"  ");//2
@@ -116,14 +124,17 @@ public class TicTacToe {
 			System.out.print(tttboard[2][0]+"  ");//7
 			System.out.print(tttboard[2][1]+"  ");//8
 			System.out.print(tttboard[2][2]+"  ");//9
+			
 			// asking for player 2's move
 			System.out.println("where would player two like to go? type in the number");
 			String player2= sc.nextLine();
+			
 			// checking for cheaters
 			if(player2.equals("0"))
 			{
 				System.out.println("we dont allow cheaters here, your turn has been skipped");
 			}
+			
 			//inputing player 2's move into the board		
 			switch(player2)
 			{
@@ -147,6 +158,7 @@ public class TicTacToe {
 			break;
 			default: break;
 			}
+			
 			//looking for a winner on all vertical spots
 			if(tttboard[0][0].equals("X")&&tttboard[1][0].equals("X")&&tttboard[2][0].equals("X")||
 					tttboard[0][1].equals("X")&&tttboard[1][1].equals("X")&&tttboard[2][1].equals("X")||
@@ -162,6 +174,7 @@ public class TicTacToe {
 				System.out.println("player 2 wins!!");
 				break;
 			}
+			
 			//Looking for a winner on all horizontal spots
 			else if(tttboard[0][0].equals("X")&&tttboard[0][1].equals("X")&&tttboard[0][2].equals("X")||
 					tttboard[1][0].equals("X")&&tttboard[1][1].equals("X")&&tttboard[1][2].equals("X")||
@@ -177,6 +190,7 @@ public class TicTacToe {
 				System.out.println("player 2 wins!!");
 				break;
 			}
+			
 			//Looking for a winner on all diagonal spots
 			else if(tttboard[0][0].equals("X")&&tttboard[1][1].equals("X")&&tttboard[2][2].equals("X")||
 					tttboard[0][2].equals("X")&&tttboard[1][1].equals("X")&&tttboard[2][0].equals("X"))
@@ -194,4 +208,3 @@ public class TicTacToe {
 		}
 	}
 }
-
