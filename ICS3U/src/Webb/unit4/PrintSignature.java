@@ -1,8 +1,8 @@
 package Webb.unit4;
 import java.util.Scanner;
 /*
- * TicTacToe 
- * this a program will let 2 players play tictactoe against each other
+ * printsignature
+ * this a program will print an ascii text using two methods
  * nov 29 2019
  * @author Logan Webb
  */
@@ -19,10 +19,20 @@ public class PrintSignature {
 		System.out.println("8 8888     `8 8888       ,8P  `8 8888       .8'.8'   `8. `88888.   8      `Y8o. `Y8");
 		System.out.println("8 8888      ` 8888     ,88'      8888     ,88'.888888888. `88888.  8         `Y8o.`");
 		System.out.println("8 888888888888 `8888888P'         `8888888P' .8'       `8. `88888. 8            `Yo");
-	;
-		                                                             
+		
+
+	}
+	public static void DrawTurtle() {
+	
+    System.out.println("               __   ");
+    System.out.println("    .,-;-;-,. /'_\\  ");
+	System.out.println("  _/_/_/_|_\\_\\) /  ");
+	System.out.println("'-<_><_><_><_>=/\\  ");
+	System.out.println("  `/_/====/_/-'\\_\\ ");
+	System.out.println("   \"\"     \"\"    \"\" ");
 	}
 	public static void main(String[] args) {
-
-}
+		printsignature();
+		DrawTurtle();
+	}
 }
