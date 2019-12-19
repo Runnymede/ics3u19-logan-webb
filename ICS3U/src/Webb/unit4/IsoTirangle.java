@@ -6,15 +6,25 @@ public class IsoTirangle {
 		
 	public static void main(String[] args) {
 	Scanner sc=new Scanner(System.in);
-	int num1;
+	int userheight;
 	System.out.println("please enter the height of your triangle");
-	num1=sc.nextInt();
-
+	userheight=sc.nextInt();
+	
+	DrawStars(userheight);
+	DrawSpaces(userheight);
 	}
-	public static void DrawStars() {
-		
+	public static void DrawStars(int userheight) {
+		for(int height=0; height<userheight;height++) {
+			for(int numstars = 0;numstars>0;numstars+=2) {
+				System.out.println("*");
+			}
+		}
 	}
-	public static void DrawSpaces() {
-		
+	public static void DrawSpaces(int userheight) {
+		for(int height=0; height<userheight;height++) {
+			for(int numstars = 0;numstars<2;numstars++) {
+				System.out.println(" ");
+			}
+		}
 	}
 }
