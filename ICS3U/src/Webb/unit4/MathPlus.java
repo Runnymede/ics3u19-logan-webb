@@ -4,7 +4,7 @@ public class MathPlus {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);	
-		
+
 		System.out.println("please enter the numbers that you wish to calculate");
 		int amountofnumbers=sc.nextInt();
 		int[] numbers=new int[amountofnumbers];
@@ -14,43 +14,49 @@ public class MathPlus {
 		}
 		System.out.println("how would you like to calculate?");
 		System.out.println("find the maximum(max), minumum(min),average(average), sum(sum)");
-		String calculate = sc.nextLine();
-		
+		String calculate = sc.next();
+
 		if (calculate.equals("max")){
-			max(numbers,amountofnumbers);
+			System.out.println(max(numbers,amountofnumbers));
 		}
 		else if (calculate.equals("min")){
-			min(numbers,amountofnumbers);
+			System.out.println(min(numbers,amountofnumbers));
 		}
 		else if (calculate.equals("sum")){
-			sum(numbers,amountofnumbers);
+			System.out.println(sum(numbers,amountofnumbers));
 		}
 		else if (calculate.equals("average")){
-			average(numbers,amountofnumbers);
+			System.out.println(average(numbers,amountofnumbers));
 		}
 
 	}
-    public static int min (int[] numbers, int amountofnumbers){
-	
-    	return 0;
-}
-    public static int max (int[] numbers, int amountofnumbers){
-    	
-    	return 0;
-}
-    public static int sum (int[] numbers, int amountofnumbers){
-    	int sum = 0;
-    	for(int i = 0; i<amountofnumbers; i++) {
-    		int total = 0;
-    		total=numbers[i]+ total;
-    		sum=total;
-    	}
-    		
-    	return sum;
-	
-}
-    public static double average (int[] numbers, int amountofnumbers){
-    	
-    	return 0;
-}
+	public static int min (int[] numbers, int amountofnumbers){
+
+		return 0;
+	}
+	public static int max (int[] numbers, int amountofnumbers){
+		
+		return 0;
+	}
+	public static int sum (int[] numbers, int amountofnumbers){
+		int sum = 0;
+		int total = 0;
+		for(int i = 0; i<amountofnumbers; i++) {
+			
+			total=numbers[i]+ total;
+			sum=total;
+		}	
+		return sum;
+	}
+	public static double average (int[] numbers, int amountofnumbers){
+		int sum = 0;
+		int total = 0;
+		for(int i = 0; i<amountofnumbers; i++) {
+			
+			total=numbers[i]+ total;
+			sum=total;
+		}
+		sum /= amountofnumbers;
+		return sum;
+	}
 }
