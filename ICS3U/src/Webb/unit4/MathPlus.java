@@ -31,18 +31,39 @@ public class MathPlus {
 
 	}
 	public static int min (int[] numbers, int amountofnumbers){
+		int min=numbers[0];
+		int minindex = 0;
+		
+		for(int i = 0; i<amountofnumbers; i++) {
 
-		return 0;
+			if (numbers[i]>min)
+			{
+				min=numbers[i];
+				minindex = i;
+			}
+		}
+		return minindex;
 	}
 	public static int max (int[] numbers, int amountofnumbers){
 		
-		return 0;
+		int max=numbers[0];
+		int maxindex = 0;
+		
+		for(int i = 0; i<amountofnumbers; i++) {
+
+			if (numbers[i]>max)
+			{
+				max=numbers[i];
+				maxindex = i;
+			}
+		}
+		return maxindex;
 	}
 	public static int sum (int[] numbers, int amountofnumbers){
 		int sum = 0;
 		int total = 0;
 		for(int i = 0; i<amountofnumbers; i++) {
-			
+
 			total=numbers[i]+ total;
 			sum=total;
 		}	
@@ -52,7 +73,7 @@ public class MathPlus {
 		int sum = 0;
 		int total = 0;
 		for(int i = 0; i<amountofnumbers; i++) {
-			
+
 			total=numbers[i]+ total;
 			sum=total;
 		}
