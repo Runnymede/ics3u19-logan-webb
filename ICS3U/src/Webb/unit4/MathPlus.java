@@ -1,5 +1,7 @@
 package Webb.unit4;
 import java.util.Scanner;
+
+import javax.crypto.Mac;
 public class MathPlus {
 
 	public static void main(String[] args) {
@@ -7,26 +9,33 @@ public class MathPlus {
 
 		System.out.println("please enter the numbers that you wish to calculate");
 		int amountofnumbers=sc.nextInt();
-		int[] numbers=new int[amountofnumbers];
+		double amountofnumbersD= amountofnumbers;
+		double[] numbers=new double[amountofnumbers];
+		
 		System.out.println("please enter the number one by one");
 		for(int i = 0;i<amountofnumbers; i++){
 			numbers[i]=sc.nextInt();
 		}
+		
 		System.out.println("how would you like to calculate?");
-		System.out.println("find the maximum(max), minumum(min),average(average), sum(sum)");
+		System.out.println("find the maximum(max), minumum(min),average(average), sum(sum), median(median)");
 		String calculate = sc.next();
 
 		if (calculate.equals("max")){
-			System.out.println(numbers[min(numbers,amountofnumbers)]);
+			System.out.println(numbers[(int) min(numbers,amountofnumbers)]);
+			//System.out.println(numbers[(int) min(numbers,amountofnumbers)]);
 		}
 		else if (calculate.equals("min")){
-			System.out.println(numbers[min(numbers,amountofnumbers)]);
+			System.out.println(numbers[(int) min(numbers,amountofnumbers)]);
 		}
 		else if (calculate.equals("sum")){
 			System.out.println(sum(numbers,amountofnumbers));
 		}
 		else if (calculate.equals("average")){
 			System.out.println(average(numbers,amountofnumbers));
+		}
+		else if (calculate.equals("median")){
+			System.out.println(median(numbers,amountofnumbers));
 		}
 
 	}
@@ -40,7 +49,7 @@ public class MathPlus {
 	public static int min (int[] numbers, int amountofnumbers){
 		int min=numbers[0];
 		int minindex = 0;
-		
+
 		for(int i = 0; i<amountofnumbers; i++) {
 
 			if (numbers[i]>min)
@@ -59,10 +68,10 @@ public class MathPlus {
 	 * @return maxindex (int)
 	 */
 	public static int max (int[] numbers, int amountofnumbers){
-		
+
 		int max=numbers[0];
 		int maxindex = 0;
-		
+
 		for(int i = 0; i<amountofnumbers; i++) {
 
 			if (numbers[i]>max)
@@ -106,12 +115,12 @@ public class MathPlus {
 		sum /= amountofnumbers;
 		return sum;
 	}
-	
-	
-	
+
+
+
 	// all doubles
-	
-	
+
+
 	/**
 	 * method name - min
 	 * this method returns the index of the first occurrence of the smallest number in the array
@@ -119,15 +128,15 @@ public class MathPlus {
 	 * @param amountofnumbers (double)
 	 * @return minindex (double)
 	 */
-	public static double min (double[] numbers, double amountofnumbers){
-		double min=numbers[0];
+	public static double min (double[] numbersD, double amountofnumbersD){
+		double min=numbersD[0];
 		int minindex = 0;
-		
-		for(int i = 0; i<amountofnumbers; i++) {
 
-			if (numbers[i]>min)
+		for(int i = 0; i<amountofnumbersD; i++) {
+
+			if (numbersD[i]>min)
 			{
-				min=numbers[i];
+				min=numbersD[i];
 				minindex = i;
 			}
 		}
@@ -141,10 +150,10 @@ public class MathPlus {
 	 * @return maxindex (double)
 	 */
 	public static double max (double[] numbers, double amountofnumbers){
-		
+
 		double max=numbers[0];
 		int maxindex = 0;
-		
+
 		for(int i = 0; i<amountofnumbers; i++) {
 
 			if (numbers[i]>max)
@@ -162,6 +171,8 @@ public class MathPlus {
 	 * @return sum (double)
 	 */
 	public static double sum (double[] numbers, double amountofnumbers){
+		
+		//varibles
 		double sum = 0;
 		double total = 0;
 		for(int i = 0; i<amountofnumbers; i++) {
@@ -178,14 +189,50 @@ public class MathPlus {
 	 * @return average (double)
 	 */
 	public static double average (double[] numbers, double amountofnumbers){
+		
+		//Variables
 		double sum = 0;
 		double total = 0;
+		
+		// getting numbers out of array to calculate average
 		for(int i = 0; i<amountofnumbers; i++) {
 
+			//finding the total
 			total=numbers[i]+ total;
 			sum=total;
 		}
+		
+		//Finding the average and returning
 		sum /= amountofnumbers;
 		return sum;
+	}
+
+
+
+
+
+	/**
+	 * Returns the median value of all the numbers in the array
+	 * @param numbers
+	 * @param amountofnumbers
+	 * @return double
+	 */
+	public static double median (double[] numbers, double amountofnumbers){
+		double medianindex = 0;
+		
+		//if the amount of numbers is even getting the two numbers and finding the average
+		if (amountofnumbers/2 == 0){
+			medianindex = Math.abs(amountofnumbers/2); 
+			int medindex1 = (int) medianindex;
+			int medindex2 = (int) medianindex-1;
+			return numbers[medindex1] + numbers[medindex2] / 2;
+		}
+		
+		// if the amount of numbers is odd finding the middle number
+		else if(amountofnumbers/2 != 0){
+			medianindex = amountofnumbers/2;
+		}
+		// returning the answer
+		return numbers[(int) medianindex];
 	}
 }
