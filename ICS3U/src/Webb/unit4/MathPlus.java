@@ -11,12 +11,12 @@ public class MathPlus {
 		int amountofnumbers=sc.nextInt();
 		double amountofnumbersD= amountofnumbers;
 		double[] numbers=new double[amountofnumbers];
-		
+
 		System.out.println("please enter the number one by one");
 		for(int i = 0;i<amountofnumbers; i++){
 			numbers[i]=sc.nextInt();
 		}
-		
+
 		System.out.println("how would you like to calculate?");
 		System.out.println("find the maximum(max), minumum(min),average(average), sum(sum), median(median)");
 		String calculate = sc.next();
@@ -171,8 +171,8 @@ public class MathPlus {
 	 * @return sum (double)
 	 */
 	public static double sum (double[] numbers, double amountofnumbers){
-		
-		//varibles
+
+		//Variables
 		double sum = 0;
 		double total = 0;
 		for(int i = 0; i<amountofnumbers; i++) {
@@ -189,11 +189,11 @@ public class MathPlus {
 	 * @return average (double)
 	 */
 	public static double average (double[] numbers, double amountofnumbers){
-		
+
 		//Variables
 		double sum = 0;
 		double total = 0;
-		
+
 		// getting numbers out of array to calculate average
 		for(int i = 0; i<amountofnumbers; i++) {
 
@@ -201,7 +201,7 @@ public class MathPlus {
 			total=numbers[i]+ total;
 			sum=total;
 		}
-		
+
 		//Finding the average and returning
 		sum /= amountofnumbers;
 		return sum;
@@ -219,7 +219,7 @@ public class MathPlus {
 	 */
 	public static double median (double[] numbers, double amountofnumbers){
 		double medianindex = 0;
-		
+
 		//if the amount of numbers is even getting the two numbers and finding the average
 		if (amountofnumbers/2 == 0){
 			medianindex = Math.abs(amountofnumbers/2); 
@@ -227,7 +227,7 @@ public class MathPlus {
 			int medindex2 = (int) medianindex-1;
 			return numbers[medindex1] + numbers[medindex2] / 2;
 		}
-		
+
 		// if the amount of numbers is odd finding the middle number
 		else if(amountofnumbers/2 != 0){
 			medianindex = amountofnumbers/2;
@@ -235,4 +235,34 @@ public class MathPlus {
 		// returning the answer
 		return numbers[(int) medianindex];
 	}
+
+	public static double mode (double[] numbers, double amountofnumbers){
+
+		for(int i = 0; i<amountofnumbers; i++) {
+
+
+		}
+		return numbers[0];
+	}
+	public static boolean prime (double number){
+
+		//Variables
+		int counter=2;
+		boolean prime=true;
+	
+		//loop to check all possible factors
+		while(counter!=number){
+			counter++;
+			if( number% counter==0){
+				prime=false;
+				break;
+			}
+		}
+
+		//returning true(prime) or false (not prime)
+		return prime;
+	}
+
 }
+
+
