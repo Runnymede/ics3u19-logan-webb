@@ -13,6 +13,7 @@ public class PigGame {
 
 		String player1name;
 		String player2name;
+		String decistion;
 		int maxscore = 100;
 		int player1total = 0;
 		int player2total = 0;
@@ -39,12 +40,29 @@ public class PigGame {
 				int dice2= dice2();
 				int sum = rolltotal();
 
+				if (ones(dice1,dice2) == true){
+					c.println("oh no! you rolled a 1 your score for this round is 0");
+				}
+				else if(sum == 2) {
+					c.println("oh no! you rolled double ones your score is now 0!!");
+					player1total = 0;
+				}
+				player1total=player1total+ sum;
+				c.println("would you like to roll again (R)? pr hold(H)?");
+				decistion=sc.nextLine();
+				
+				if (decistion .equals ("R")){
+					dice1= dice1();
+					dice2= dice2();
+					sum = rolltotal();
+				}
+
 
 			}while(player1total != maxscore);
 		}
 	}
 	public static int dice1() {
-		int dice1;S
+		int dice1;
 		dice1=(int)(Math.random()*6)+1;
 		return dice1;
 	}
@@ -57,4 +75,14 @@ public class PigGame {
 		int sum = dice1() + dice2();
 		return sum;
 	}
+	public static boolean ones(int dice1, int dice2) {
+
+		if (dice1==1||dice2==1) {
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
 }
