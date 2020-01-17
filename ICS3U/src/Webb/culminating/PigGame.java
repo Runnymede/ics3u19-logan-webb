@@ -1,5 +1,7 @@
 package Webb.culminating;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.Scanner;
 
 import hsa_new.Console;
@@ -10,6 +12,15 @@ public class PigGame {
 
 	public static void main(String[] args) throws InterruptedException {
 
+		Image[] pics = new Image [6];
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		
+		pics[0]= toolkit.getImage("src/webb/culminating/Dice1.jpg");
+		pics[1]= toolkit.getImage("src/webb/culminating/Dice2.jpg");
+		pics[2]= toolkit.getImage("src/webb/culminating/Dice3.jpg");
+		pics[3]= toolkit.getImage("src/webb/culminating/Dice4.jpg");
+		pics[4]= toolkit.getImage("src/webb/culminating/Dice5.jpg");
+		pics[5]= toolkit.getImage("src/webb/culminating/Dice6.jpg");
 		Scanner sc=new Scanner(System.in);
 
 		String player1name;
@@ -37,8 +48,8 @@ public class PigGame {
 		while (player1total <= maxscore || player2total <= maxscore ){
 			do {
 				c.println(player1name+"'s roll");
-				int dice1= dice1();
-				int dice2= dice2();
+				int dice1= dice1(pics[]);
+				int dice2= dice2(pics[]);
 				int sum = rolltotal(dice1,dice2);
 
 				c.println("dice 1: "+dice1);
@@ -67,13 +78,13 @@ public class PigGame {
 
 				printing(player1total,player2total,player1name,player2name);
 				
-				Thread.sleep(5000);
+				
 				c.clear();
 			}while(decistion. equals ("R"));
-			do {
+			do {Thread.sleep(5000);
 				c.println(player2name+"'s roll");
 				int dice1= dice1();
-				int dice2= dice2();
+				int dice2= dice2(pics[]);
 				int sum = rolltotal(dice1,dice2);
 
 				c.println("dice 1: "+dice1);
@@ -109,20 +120,23 @@ public class PigGame {
 	}
 
 
-	public static void printing(int player1total, int player2total, String  player1name, String player2name) {
+	public static void printing(int player1total, int player2total, String player1name, String player2name){
 
 		a.clear();
 		a.println(player1name+" : "+ player1total);
 		a.println(player2name+" : "+ player2total);
 	}
-	public static int dice1() {
+	public static int dice1( pics[]) {
 		int dice1;
 		dice1=(int)(Math.random()*6)+1;
 		return dice1;
+		a.drawImage(pics[dice1-1], 5, 5, null);
+		
 	}
-	public static int dice2() {
+	public static int dice2(Image pics[]) {
 		int dice2;
 		dice2=(int)(Math.random()*6)+1;
+		a.drawImage(pics[dice2-1], 5, 5, null);
 		return dice2;
 	}
 	public static int rolltotal(int dice1, int dice2) {
