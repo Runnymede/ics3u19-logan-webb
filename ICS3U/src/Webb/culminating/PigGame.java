@@ -14,7 +14,7 @@ public class PigGame {
 
 		Image[] pics = new Image [6];
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		
+
 		pics[0]= toolkit.getImage("src/webb/culminating/Dice1.jpg");
 		pics[1]= toolkit.getImage("src/webb/culminating/Dice2.jpg");
 		pics[2]= toolkit.getImage("src/webb/culminating/Dice3.jpg");
@@ -48,9 +48,11 @@ public class PigGame {
 		while (player1total <= maxscore || player2total <= maxscore ){
 			do {
 				c.println(player1name+"'s roll");
-				int dice1= dice1(pics[]);
-				int dice2= dice2(pics[]);
+				int dice1= dice1(pics);
+				int dice2= dice2(pics);
 				int sum = rolltotal(dice1,dice2);
+				a.drawImage(pics[dice1-1], 5, 5, null);
+				a.drawImage(pics[dice2-1], 75, 5, null);
 
 				c.println("dice 1: "+dice1);
 				c.println("dice 2: "+dice2);
@@ -77,14 +79,15 @@ public class PigGame {
 				}
 
 				printing(player1total,player2total,player1name,player2name);
-				
-				
-				c.clear();
+
+//				c.clear();
+//				Thread.sleep(1000);
+
 			}while(decistion. equals ("R"));
-			do {Thread.sleep(5000);
+			do {
 				c.println(player2name+"'s roll");
-				int dice1= dice1();
-				int dice2= dice2(pics[]);
+				int dice1= dice1(pics);
+				int dice2= dice2(pics);
 				int sum = rolltotal(dice1,dice2);
 
 				c.println("dice 1: "+dice1);
@@ -112,9 +115,9 @@ public class PigGame {
 				}
 
 				printing(player1total,player2total,player1name,player2name);
-				Thread.sleep(5000);
-				c.clear();
-			
+//				Thread.sleep(1000);
+//				c.clear();
+
 			}while(decistion. equals ("R"));
 		}
 	}
@@ -126,17 +129,14 @@ public class PigGame {
 		a.println(player1name+" : "+ player1total);
 		a.println(player2name+" : "+ player2total);
 	}
-	public static int dice1( pics[]) {
+	public static int dice1(Image[] pics) {
 		int dice1;
 		dice1=(int)(Math.random()*6)+1;
 		return dice1;
-		a.drawImage(pics[dice1-1], 5, 5, null);
-		
 	}
 	public static int dice2(Image pics[]) {
 		int dice2;
 		dice2=(int)(Math.random()*6)+1;
-		a.drawImage(pics[dice2-1], 5, 5, null);
 		return dice2;
 	}
 	public static int rolltotal(int dice1, int dice2) {
